@@ -75,7 +75,7 @@
 <div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
 <![endif]-->
 
-<body>
+<body id='home'>
     <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
     <div class="main-header-box">
         <a class="header-avatar" href="/" title='朱润来'>
@@ -111,7 +111,7 @@
         </div>
     </div>
 </nav>
-    <section class="content-wrap">
+    <section class="content-wrap" id="home">
         <div class="container">
             <div class="row">
                 <main class="col-md-8 main-content ">
@@ -285,5 +285,50 @@
 
 
 	<script type="text/javascript" src="http://7u2ss1.com1.z0.glb.clouddn.com/love.js"></script>
+	 <script>
+var zhu=1;
+window.onload=function(){ 
+// snowFlow(); 
+function snowFlow(left,height,src)
+{
+ var container=document.createElement('div'); 
+ var pic=document.createElement('img');
+// var snowFlow=document.getElementsByTagName("body")[0];
+ var snowFlow=document.getElementById('home');
+ pic.className='pic'; 
+ container.className='containers'; 
+ snowFlow.appendChild(container);
+ container.appendChild(pic); 
+ container.style.left=left+'px'; 
+ container.style.height=height+'px'; 
+ pic.src=src; 
+ var a=1;
+ setTimeout(function(){ snowFlow.removeChild(container); },5000); } 
+ setInterval(function(){ 
+ var left=Math.random()*window.innerWidth-50; 
+ var height=Math.random()*window.innerHeight-50; 
+var src;
+if(zhu%2==0)
+{
+ src = 'http://pic.90sjimg.com/design/00/07/85/23/593165237cc60.png'; 
+zhu++;
+}
+else
+{
+src="http://pic.90sjimg.com/design/01/25/27/46/596395f66efcf.png";
+zhu++;
+}
+
+
+ snowFlow(left,height,src);
+ },500) }
+
+</script>
+<style>
+body {  } @keyframes mysnow { 0% { bottom: 100%; opacity: 0; } 50% { opacity: 1; transform: rotate(720deg);} 100% { transform: rotate(0deg); opacity: 0; bottom: 0%;} }
+ .containers { position: absolute;z-index:999999;margin-top:-600px }
+ .pic { position: absolute; opacity: 0; animation: mysnow 5s;height: 30px; }
+
+</style>
 </body>
 </html>
